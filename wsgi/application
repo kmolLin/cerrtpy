@@ -40,6 +40,11 @@ class guess(object):
             outstring += "<br />"
         return outstring
 
+    #@+node:2015.20141208003035.1732: *3* def tel
+    @cherrypy.expose
+    def tel(self, table):
+        table ="good"
+        return table
     #@-others
 #@-others
 # 以下為執行內容
