@@ -7,6 +7,7 @@
 import os
 import cherrypy
 #@-<<declarations>>
+
 #@+others
 #@+node:2015.20141203095354.1762: ** class guess
 class guess(object):
@@ -30,9 +31,10 @@ class guess(object):
 
     #@+node:2015.20141203101430.1806: *3* def table
     @cherrypy.expose
-    def table(self, table):
+    def table(self, number):
+        number =int(number)
         start =1
-        end = 10
+        end = number
         outstring = ""
         for i in range(start,end,1):
             for j in range(start,end,1):
@@ -51,7 +53,7 @@ class guess(object):
 # 利用 guess() 類別建一個案例, 名稱為 myguess
 myguess = guess()
 # 透過 myguess 案例的成員方法引用, 傳回特定字串
-print(myguess.table(table="you"))
+# print(myguess.table(table="you"))
 
 if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 表示在 OpenSfhit 執行
