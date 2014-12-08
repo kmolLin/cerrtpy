@@ -42,6 +42,15 @@ class guess(object):
             outstring += "<br />"
         return outstring
 
+    #@+node:2015.20141208195727.1722: *3* def index3
+    @cherrypy.expose
+    def index3(self):
+        return """
+        <form action="table"> 
+        <input type=text name="number">
+        <input type=submit>
+        </form>
+        """
     #@+node:2015.20141208003035.1732: *3* def tel
     @cherrypy.expose
     def tel(self, table):
