@@ -42,11 +42,47 @@ class guess(object):
             outstring += "<br />"
         return outstring
 
+    #@+node:2015.20141210155206.1710: *3* w5
+    @cherrypy.expose
+    def w5(self,number):
+        number =int(number)
+        outstring =""
+        for i in range(1,number+1,1):
+            outstring +=  str(i*"a") +"<br />"
+        for i in range(number-1,0,-1):
+            outstring +=  str(i*"a") +"<br />"
+        return outstring
+    #@+node:2015.20141210223343.1711: *3* w6
+    @cherrypy.expose
+    def w6(self,number):
+        number =int(number)
+        outstring =""
+        for i in range(number-1,0,-1):
+            outstring +=  str(i*"a") +"<br />"
+        for i in range(1,number+1,1):
+            outstring +=  str(i*"a") +"<br />"
+            """
+        <a href=/index>
+        """
+        return outstring
     #@+node:2015.20141208195727.1722: *3* def index
     @cherrypy.expose
     def index(self):
         return """
+        <font　face="Arial"　color="#cc33ff"　size="7">Multiplication table</font>
         <form action="table"> 
+        <input type=text name="number">
+        <input type=submit>
+        </form>
+       
+        <font　face="Arial"　color="#cc33ff"　size="7">Print a</font>
+        <form action="w5"> 
+        <input type=text name="number">
+        <input type=submit>
+        </form>
+
+    <font　face="Arial"　color="#cc33ff"　size="7">Print a(In contrast)</font>
+        <form action="w6"> 
         <input type=text name="number">
         <input type=submit>
         </form>
